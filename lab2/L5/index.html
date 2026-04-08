@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L5</title>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <!-- Mustache syntax -->
+    <h1>{{ product }}</h1>
+
+    <!-- L2 Challenge -->
+    <img :src="image" :alt="product" width="200">
+    <!-- L4 Challenge -->
+    <p v-if="inventory > 10">In Stock</p>
+    <p v-else-if="inventory <= 10 && inventory > 0">Almost sold out!</p>
+    <p v-else>Out of Stock</p>
+    <p v-if="onSale">On Sale!</p>
+    <ul>
+        <li v-for="detail in details">{{ detail }}</li>
+    </ul>
+    <!-- L5 Challenge -->     
+    <ul>
+        <li v-for="(size, index) in sizes" :key="index">{{ size }}</li>
+    </ul>
+          
+    <div v-for="variant in variants" :key="variant.id">{{ variant.color }}</div>
+
+
+    <!-- L3 Challenge -->
+    <a :href="url" target="_blank">
+      More details
+    </a>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L7</title>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <!-- Mustache syntax -->
+    <h1>{{ product }}</h1>
+    <div class="cart">Cart({{ cart }})</div>
+
+    <!-- L7 Challenge -->
+    <img :class="{ 'out-of-stock-img': !inStock }" v-bind:src="image">
+    <!-- L4 Challenge -->
+    <p v-if="inStock">In Stock</p>
+            <p v-else>Out of Stock</p>
+            <ul>
+              <li v-for="detail in details">{{ detail }}</li>
+            </ul>
+
+            <div 
+              v-for="variant in variants" 
+              :key="variant.id" 
+              @mouseover="updateImage(variant.image)" 
+              class="color-circle" 
+              :style="{ backgroundColor: variant.color }">
+            </div>
+            
+            <button 
+              class="button" 
+              :class="{ disabledButton: !inStock }" 
+              :disabled="!inStock" 
+              @click="addToCart">
+              Add to Cart
+            </button>
+    <!-- L3 Challenge -->
+    <a :href="url" target="_blank">
+      More details
+    </a>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

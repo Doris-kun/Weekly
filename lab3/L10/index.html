@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L10</title>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <div id="app">
+      <div class="nav-bar"></div>
+
+      <div class="cart">Cart({{ cart.length }})</div>
+      <product-display 
+        :premium="premium" 
+        @add-to-cart="updateCart"
+        @remove-from-cart="removeById"> <!-- solution -->
+      </product-display>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="components/ProductDisplay.js"></script>
+    <script>
+      app.mount('#app')
+    </script>
+  </body>
+</html>
