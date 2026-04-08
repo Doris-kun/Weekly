@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>L4</title>
+
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="app">
+    <!-- Mustache syntax -->
+    <h1>{{ product }}</h1>
+
+    <!-- L2 Challenge -->
+    <img :src="image" :alt="product" width="200">
+
+    <p>{{ description }}</p>
+
+    <!-- L4 Challenge -->
+    <p v-if="onSale">On Sale</p>
+
+    <!-- L3 Challenge -->
+    <a :href="url" target="_blank">
+      More details
+    </a>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
